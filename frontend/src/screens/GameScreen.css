@@ -1,0 +1,249 @@
+.gamescreen {
+  margin-top: 2rem;
+  width: 1300px;
+  height: 550px;
+  color: white;
+  background-color: #262626;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+}
+
+.gamescreen.show {
+  transform: translate(-50%, -50%);
+}
+
+.game__details {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 0.3fr;
+}
+
+.game__details > div > img {
+  width: 550px;
+  height: 550px;
+  border-radius: 15px 0px 0px 15px;
+  object-fit: cover;
+}
+
+.game__name {
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  align-items: center;
+  font-size: 2.5rem;
+  color: white;
+
+  padding: 2rem 0rem;
+  margin-bottom: 12px;
+}
+.game__likes {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.game__likes:hover {
+  color: #f72585;
+}
+.info__released {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-bottom: 1px solid black;
+  padding: 1rem 0rem 1rem 0rem;
+}
+
+.info__released > p {
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #5b5c5b;
+}
+
+.info__released > span {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+.info__rating1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-bottom: 1px solid black;
+  padding: 1rem 0rem 1rem 0rem;
+}
+
+.info__rating1 > p {
+  font-weight: 500;
+  color: #5b5c5b;
+  font-size: 1.3rem;
+}
+.info__rating1 > span {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.info__meta1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-bottom: 1px solid black;
+  padding: 1rem 0rem 1rem 0rem;
+}
+
+.info__meta1 > p {
+  font-weight: 500;
+  color: #5b5c5b;
+  font-size: 1.3rem;
+}
+
+.info__meta1 > span {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.above_70 {
+  color: #30cf74;
+}
+.above50 {
+  color: #d9901c;
+  border: 2px solid #d9901c;
+}
+.under50 {
+  color: #d9481c;
+  border: 2px solid #d9481c;
+}
+
+.info__play1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-bottom: 1px solid black;
+  padding: 1rem 0rem 1rem 0rem;
+}
+
+.info__play1 > p {
+  font-weight: 500;
+  color: #5b5c5b;
+  font-size: 1.3rem;
+}
+
+.info__play1 > span {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+.info__genres1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-bottom: 1px solid black;
+  padding: 1rem 0rem 1rem 0rem;
+}
+
+.info__genres1 > p {
+  font-weight: 500;
+  color: #5b5c5b;
+  font-size: 1.3rem;
+}
+
+.info__genres1 > span {
+  font-weight: 600;
+  display: grid;
+  font-size: 1.3rem;
+  gap: 0px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.info__platforms1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  padding: 1rem 0rem 1rem 0rem;
+}
+
+.info__platforms1 > p {
+  font-weight: 500;
+  color: #5b5c5b;
+  font-size: 1.3rem;
+}
+
+.info__platforms1 > span {
+  font-weight: 600;
+  display: grid;
+  font-size: 1.3rem;
+  gap: 8px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.game__exit {
+  font-size: 25px;
+  color: white;
+  padding: 0px;
+  background-color: transparent;
+  border: 0;
+  margin-left: 3rem;
+  transition: 0.3s ease-in-out;
+}
+
+.game__exit:hover {
+  color: #f72585;
+}
+
+@media (max-width: 1400px) {
+  .gamescreen {
+    width: 1200px;
+  }
+  .game__details > div > img {
+    width: 550px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .gamescreen {
+    width: 1000px;
+  }
+  .game__details > div > img {
+    width: 450px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .gamescreen {
+    width: 800px;
+    height: 800px;
+  }
+  .game__details > div > img {
+    width: 800px;
+    height: 300px;
+    border-radius: 15px 15px 0px 0px;
+  }
+
+  .game__details {
+    display: flex;
+    flex-direction: column;
+  }
+  .game__details:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .info__platforms1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .game__exit {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .gamescreen {
+    width: 500px;
+    height: 800px;
+  }
+  .game__details > div > img {
+    width: 500px;
+    height: 300px;
+    border-radius: 15px 15px 0px 0px;
+  }
+
+  .game__details {
+    display: flex;
+    flex-direction: column;
+  }
+}

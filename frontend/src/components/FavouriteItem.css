@@ -1,0 +1,57 @@
+.favouriteItem {
+  width: 900px;
+  height: 200px;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr;
+  background-color: #262626;
+}
+
+.favouriteItem > img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px 0px 0px 15px;
+}
+
+.item__body {
+  display: grid;
+  grid-template-rows: 1fr 0.5fr;
+
+  gap: 0px;
+}
+.item__body > a {
+  text-decoration: none;
+  color: white;
+}
+.favourite__name {
+  font-weight: 700;
+  font-size: 2rem;
+  padding: 2rem 0rem 0rem 0rem;
+  transition: 0.3s ease-out;
+}
+.favourite__name:hover {
+  color: #f72585;
+}
+.added {
+  font-weight: 500;
+}
+
+.delete__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.delete__btn > button {
+  padding: 2rem;
+  border: 0;
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.2s ease-in-out;
+}
+
+.delete__btn > button:hover {
+  color: #f72585;
+}

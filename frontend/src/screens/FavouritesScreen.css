@@ -1,0 +1,20 @@
+.favouritesScreen {
+  height: fit-content;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 35px;
+  justify-items: center;
+  align-items: center;
+}
+
+.favourite__empty {
+  color: #fff;
+  font-weight: 700;
+  font-size: 105px;
+}
+.favourite__empty > a {
+  text-decoration: none;
+  color: #f72585;
+}
