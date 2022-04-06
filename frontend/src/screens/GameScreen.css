@@ -9,7 +9,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 15px;
-  z-index: 100;
+  z-index: 90;
   transition: all 0.3s ease-in-out;
 }
 
@@ -35,13 +35,15 @@
   flex-direction: row;
   gap: 25px;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: white;
-
+}
+.game__name > p {
   padding: 2rem 0rem;
   margin-bottom: 12px;
 }
 .game__likes {
+  font-size: 35px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
@@ -68,6 +70,7 @@
 .info__rating1 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
   border-bottom: 1px solid black;
   padding: 1rem 0rem 1rem 0rem;
 }
@@ -208,6 +211,15 @@
     width: 800px;
     height: 800px;
   }
+  .game__name > p {
+    padding-bottom: 0px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .game__name {
+    display: flex;
+    flex-direction: column;
+  }
   .game__details > div > img {
     width: 800px;
     height: 300px;
@@ -218,13 +230,48 @@
     display: flex;
     flex-direction: column;
   }
-  .game__details:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .info__platforms1 > p {
+    padding: 0rem 1rem 0rem 5rem;
   }
-  .info__platforms1 {
-    grid-template-columns: repeat(2, 1fr);
+  .info__platforms1 > span {
+    padding: 0rem 1rem 0rem 5rem;
+    font-weight: 600;
+    display: flex;
+    font-size: 1.2rem;
+    gap: 30px;
+    flex-direction: row;
+  }
+  .info__released > p {
+    padding: 0rem 1rem 0rem 5rem;
+  }
+  .info__released > span {
+    padding: 0rem 1rem 0rem 5rem;
+  }
+
+  .info__rating1 > p {
+    padding: 0rem 1rem 0rem 5rem;
+  }
+  .info__rating1 > span {
+    padding: 0rem 1rem 0rem 5rem;
+  }
+
+  .info__meta1 > p {
+    padding: 0rem 1rem 0rem 5rem;
+  }
+  .info__meta1 > span {
+    padding: 0rem 1rem 0rem 5rem;
+  }
+  .info__genres1 > p {
+    padding: 0rem 1rem 0rem 5rem;
+  }
+  .info__genres1 > span {
+    padding: 0rem 1rem 0rem 5rem;
+  }
+  .info__play1 > p {
+    padding: 0rem 1rem 0rem 5rem;
+  }
+  .info__play1 > span {
+    padding: 0rem 1rem 0rem 5rem;
   }
   .game__exit {
     display: none;
@@ -236,12 +283,87 @@
     width: 500px;
     height: 800px;
   }
+  .game__name > p {
+    padding-bottom: 0px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .game__name {
+    display: flex;
+    flex-direction: column;
+  }
+  .game__likes {
+    padding-bottom: 15px;
+    font-size: 25px;
+  }
   .game__details > div > img {
     width: 500px;
-    height: 300px;
+    height: 250px;
     border-radius: 15px 15px 0px 0px;
   }
+  .info__released > p {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #5b5c5b;
+    padding: 0rem 1rem 0rem 4rem;
+  }
 
+  .info__released > span {
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0rem 1rem 0rem 3rem;
+  }
+  .info__rating1 > p {
+    font-size: 1.1rem;
+    padding: 0rem 1rem 0rem 4rem;
+  }
+  .info__rating1 > span {
+    font-size: 1.1rem;
+    padding: 0rem 1rem 0rem 3rem;
+  }
+
+  .info__meta1 > p {
+    font-size: 1.1rem;
+    padding: 0rem 1rem 0rem 4rem;
+  }
+  .info__meta1 > span {
+    font-size: 1.1rem;
+    padding: 0rem 1rem 0rem 3rem;
+  }
+
+  .info__play1 > p {
+    font-size: 1.1rem;
+  }
+  .info__play1 > span {
+    font-size: 1.1rem;
+    padding: 0rem 1rem 0rem 3rem;
+  }
+
+  .info__genres1 > p {
+    font-size: 1.1rem;
+    padding: 0rem 1rem 0rem 4rem;
+  }
+  .info__genres1 > span {
+    font-size: 1.1rem;
+    padding: 0rem 1rem 0rem 3rem;
+  }
+  .info__play1 > p {
+    font-size: 1.1rem;
+    padding: 0rem 1rem 0rem 4rem;
+  }
+  .info__play1 > span {
+    font-size: 1.1rem;
+    padding: 0rem 1rem 0rem 3rem;
+  }
+
+  .info__platforms1 > p {
+    font-size: 1.1rem;
+    padding: 0rem 1rem 0rem 4rem;
+  }
+  .info__platforms1 > span {
+    font-size: 1.1rem;
+    padding: 0rem 1rem 0rem 3rem;
+  }
   .game__details {
     display: flex;
     flex-direction: column;

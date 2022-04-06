@@ -55,3 +55,39 @@
 .delete__btn > button:hover {
   color: #f72585;
 }
+
+@media (max-width: 800px) {
+  .favouriteItem {
+    width: 400px;
+    height: 400px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .favouriteItem > img {
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px 15px 0px 0px;
+  }
+  .item__body {
+    text-align: center;
+    display: grid;
+    gap: 20px;
+    grid-template-rows: 1fr 0.35fr;
+  }
+
+  .favourite__name {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 1rem 0rem 0rem 0rem;
+  }
+  .delete__btn > button {
+    padding-bottom: 2rem;
+    border: 0;
+    color: white;
+    font-size: 25px;
+  }
+}

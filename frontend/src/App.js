@@ -5,35 +5,34 @@ import { useState } from "react";
 //Screens
 import HomeScreen from "./screens/HomeScreen";
 import GameScreen from "./screens/GameScreen";
-import PersonalInfos from "./screens/PersonalInfos";
+import AccountScreen from "./screens/AccountScreen";
 import FavouritesScreen from "./screens/FavouritesScreen";
 
 //components
 import NavBar from "./components/NavBar";
 import Backdrop from "./components/Backdrop";
 import SideDrawer from "./components/SideDrawer";
-import AccountScreen from "./screens/AccountScreen";
 
 function App() {
-  const [sideToggle, setSideToggle] = useState(1);
+  const [sideToggle, setSideToggle] = useState(false);
   return (
     <div className="App">
       <Router>
         <NavBar
           click={() => {
-            setSideToggle(2);
+            setSideToggle(true);
           }}
         />
         <Backdrop
           show={sideToggle}
           click={() => {
-            setSideToggle(1);
+            setSideToggle(false);
           }}
         />
         <SideDrawer
           show={sideToggle}
           click={() => {
-            setSideToggle(1);
+            setSideToggle(false);
           }}
         />
 

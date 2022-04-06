@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { ListGameDetails } from "../redux/actions/gameActions";
 import "./GameScreen.css";
 import { useDispatch, useSelector } from "react-redux";
-import ops3 from "./ops3.jpg";
 
 import { addToFavourites } from "../redux/actions/favouriteActions";
 
@@ -24,7 +23,6 @@ const GameScreen = ({ match, history }) => {
 
   return (
     <div className={"gamescreen"}>
-      <div></div>
       {loading ? (
         <div className="loading">
           <div className="spinner"></div>
@@ -66,10 +64,10 @@ const GameScreen = ({ match, history }) => {
                 <p>Platforms: </p>
                 <span>
                   <i className="fa-brands fa-playstation"></i>
-                  <i className="fa-solid fa-apple-whole"></i>
-                  <i className="fa-solid fa-apple-whole"></i>
-                  <i className="fa-solid fa-apple-whole"></i>
-                  <i className="fa-solid fa-apple-whole"></i>
+                  <i className="fa-solid fa-desktop"></i>
+                  <i className="fa-brands fa-linux"></i>
+                  <i className="fa-brands fa-xbox"></i>
+                  <i className="fa-brands fa-playstation"></i>
                 </span>
               </div>
             </div>

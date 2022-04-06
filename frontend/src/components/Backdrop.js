@@ -3,7 +3,7 @@ import "./Backdrop.css";
 
 const Backdrop = ({ click, show }) => {
   return (
-    (show === 2 || show === 3) && (
+    show && (
       <div className="backdrop" onClick={click}>
         Backdrop
       </div>
