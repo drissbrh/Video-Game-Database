@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-const colors = require("colors");
-const dotenv = require("dotenv");
+import mongoose from "mongoose";
+import colors from "colors";
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -19,4 +19,4 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;
+export default connectDB;

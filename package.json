@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "It's Game Time",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node backend/server",
     "client": "npm start --prefix frontend",

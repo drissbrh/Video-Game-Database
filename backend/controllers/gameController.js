@@ -1,6 +1,6 @@
-const Game = require("../models/gameModel");
+import Game from "../models/gameModel.js";
 
-exports.getAllGames = async (req, res) => {
+const getAllGames = async (req, res) => {
   try {
     const games = await Game.find();
     res.json(games);
@@ -9,7 +9,7 @@ exports.getAllGames = async (req, res) => {
   }
 };
 
-exports.getGameById = async (req, res) => {
+const getGameById = async (req, res) => {
   try {
     const game = await Game.findById(req.params.id);
     res.json(game);
@@ -17,3 +17,5 @@ exports.getGameById = async (req, res) => {
     console.log(`${Error}`.red);
   }
 };
+
+export { getAllGames, getGameById };

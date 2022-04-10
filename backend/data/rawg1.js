@@ -46919,4 +46919,4 @@ const results = [
   },
 ];
 
-module.exports = results;
+export default results;

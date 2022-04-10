@@ -1,9 +1,9 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
+import rawg1 from "./data/rawg1.js";
+import game from "./models/gameModel.js";
 
-const rawg1 = require("./data/rawg1");
-const game = require("./models/gameModel");
-
-const connectDB = require("./config/db");
+import connectDB from "./config/db.js";
 
 connectDB();
 
