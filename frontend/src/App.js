@@ -38,6 +38,7 @@ function App() {
 
         <Switch>
           <Route exact path="/" component={HomeScreen} />
+          <Route exact path="/page/:pageNumber" component={HomeScreen} />
           <Route path="/game/:id" component={GameScreen} />
           <Route path="/favourites" component={FavouritesScreen} />
           <Route path="/info" component={AccountScreen} />

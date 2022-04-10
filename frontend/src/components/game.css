@@ -11,7 +11,7 @@
   margin-bottom: 50px;
 }
 
-.game > img {
+.game > a > img {
   padding: 0rem;
   width: 100%;
   border-radius: 15px 15px 0px 0px;

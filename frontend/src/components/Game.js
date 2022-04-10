@@ -22,9 +22,12 @@ const Game = (props) => {
 
   return (
     <div className="game">
-      <img src={image} alt={name} />
+      <Link to={`/game/${gameId}`} title="See game details">
+        <img src={image} alt={name} />
+      </Link>
+
       <div className="game__info">
-        <Link to={`/game/${gameId}`}>
+        <Link to={`/game/${gameId}`} title="See game details">
           <p className="info__name">{name}</p>
         </Link>
 

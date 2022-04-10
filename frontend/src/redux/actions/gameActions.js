@@ -8,27 +8,31 @@ import {
 } from "../constants/gameConstants";
 import axios from "axios";
 
-export const ListGames = () => async (dispatch) => {
-  try {
-    dispatch({
-      type: GAME_LIST_REQUEST,
-    });
-    const { data } = await axios.get("/api/v1/games");
+export const ListGames =
+  (pageNumber = "") =>
+  async (dispatch) => {
+    try {
+      dispatch({
+        type: GAME_LIST_REQUEST,
+      });
+      const { data } = await axios.get(
+        `/api/v1/games?pageNumber=${pageNumber}`
+      );
 
-    dispatch({
-      type: GAME_LIST_SUCCESS,
-      payload: data,
-    });
-  } catch (error) {
-    dispatch({
-      type: GAME_LIST_FAIL,
-      error:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
-    });
-  }
-};
+      dispatch({
+        type: GAME_LIST_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: GAME_LIST_FAIL,
+        error:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };
 
 export const ListGameDetails = (id) => async (dispatch) => {
   try {

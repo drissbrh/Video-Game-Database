@@ -37,7 +37,11 @@ const GameScreen = ({ match, history }) => {
           <div>
             <div className="game__name">
               <p>{game.name}</p>
-              <i className="fa-solid fa-heart game__likes" onClick={addIt}></i>
+              <i
+                className="fa-solid fa-heart game__likes"
+                onClick={addIt}
+                title="Add this game to favourite"
+              ></i>
             </div>
             <div>
               <div className="info__released">
@@ -72,12 +76,14 @@ const GameScreen = ({ match, history }) => {
               </div>
             </div>
           </div>
-          <button className="game__exit">
-            <i
-              className="fa-solid fa-arrow-right-from-bracket game__exit1"
-              onClick={() => history.push("/")}
-            ></i>
-          </button>
+          <div>
+            <button className="game__exit" title="Exit to home page">
+              <i
+                className="fa-solid fa-arrow-right-from-bracket game__exit1"
+                onClick={() => history.push("/page/1")}
+              ></i>
+            </button>
+          </div>
         </div>
       )}
     </div>
