@@ -62,7 +62,7 @@ const GameScreen = ({ match, history }) => {
               </div>
               <div className="info__genres1">
                 <p>Genres: </p>
-                <span></span>
+                <span>{game.genres && game.genres.map(e=> e.name).join(',')}</span>
               </div>
               <div className="info__platforms1">
                 <p>Platforms: </p>
