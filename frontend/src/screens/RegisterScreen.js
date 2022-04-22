@@ -1,19 +1,28 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./RegisterScreen.css";
+
+import { registerUser } from "../redux/actions/userActions";
 
 const RegisterScreen = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const userRegister = useSelector((state) => state.userRegister);
+  const { loading, error, userInfo } = userRegister;
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(registerUser(name, email, password));
   };
   return (
     <div className="registerscreen">
       <h1 className="register__header">Register</h1>
+      {error && <p className="signIn__error">{error}</p>}
+      {loading && <h5 className="spinner2"></h5>}
       <form onSubmit={handleSubmit} className="form__elements1">
         <div className="username__section">
           <label>Name</label>
@@ -28,7 +37,7 @@ const RegisterScreen = () => {
           <div className="username__section">
             <label>Email</label>
             <input
-              type="name"
+              type="email"
               placeholder="Enter your username"
               value={email}
               onChange={(e) => {
@@ -63,11 +72,10 @@ const RegisterScreen = () => {
           Already have an account ?{"  "}
           <Link to="/login">Sign In</Link>
         </p>
+        <button type="submit" className="register__btn">
+          Register
+        </button>
       </form>
-
-      <button type="submit" className="register__btn">
-        Register
-      </button>
     </div>
   );
 };

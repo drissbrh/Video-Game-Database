@@ -1,8 +1,10 @@
 import express from "express";
 import colors from "colors";
 import connectDB from "./config/db.js";
+//Routes
 import gameRouter from "./routes/gameRoutes.js";
 import userRouter from "./routes/userRoutes.js";
+import favouriteRouter from "./routes/favouriteRoutes.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import path from "path";
 import dotenv from "dotenv";
@@ -19,6 +21,7 @@ if (process.env.NODE_ENV === "development") {
 app.use(express.json());
 app.use("/api/v1/games", gameRouter);
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/favourites", favouriteRouter);
 
 const __dirname = path.resolve();
 

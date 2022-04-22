@@ -7,10 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 const ProfileScreen = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [birth, setBirth] = useState("");
-  const [address, setAddress] = useState("");
   const dispatch = useDispatch();
 
   const userLogin = useSelector((state) => state.userLogin);

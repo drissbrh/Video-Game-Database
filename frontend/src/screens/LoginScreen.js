@@ -27,9 +27,10 @@ const LoginScreen = ({ location, history }) => {
   };
   return (
     <div className="loginscreen">
-      <h1 className="signIn__header">Sign In</h1>
-      {error && <h1>{error}</h1>}
-      {loading && <h1 className="spinner">.......</h1>}
+      {!loading && <h1 className="signIn__header">Sign In</h1>}
+      {error && <p className="signIn__error">{error}</p>}
+      {loading && <h1 className="spinner1"></h1>}
+
       <form onSubmit={handleSubmit} className="form__elements">
         <div className="email__section">
           <label>Email</label>

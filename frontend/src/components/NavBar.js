@@ -24,9 +24,13 @@ const NavBar = ({ click }) => {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
-          <Link to="/favourites">Favourites</Link>
-        </li>
+        {userInfo ? (
+          <li>
+            <Link to="/favourites">FAVOURITES</Link>
+          </li>
+        ) : (
+          <></>
+        )}
         {userInfo ? (
           <>
             <li>

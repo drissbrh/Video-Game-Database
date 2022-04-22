@@ -3,13 +3,14 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { gameDetailReducer, gameListReducer } from "./reducers/gameReducer";
 import { favouriteReducer } from "./reducers/favouriteReducer";
-import { userLoginReducer } from "./reducers/userReducer";
+import { userLoginReducer, userRegisterReducer } from "./reducers/userReducer";
 
 const reducer = combineReducers({
   favourite: favouriteReducer,
   gameList: gameListReducer,
   gameDetails: gameDetailReducer,
   userLogin: userLoginReducer,
+  userRegister: userRegisterReducer,
 });
 
 const middleware = [thunk];

@@ -5,8 +5,23 @@
   color: white;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 35px;
   transform: translate(-50%, -50%);
+}
+
+.spinner2 {
+  width: 70px;
+  height: 70px;
+  border-left: 4px solid #f72585;
+  border-radius: 100px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 .registerscreen > h1 {
   font-size: 55px;
@@ -37,7 +52,8 @@
   font-size: 17px;
 
   background-color: #f72585;
-  border: 2px solid #f72585;
+  border-radius: 5px;
+  border: 1px solid #f72585;
   padding: 15px 25px;
   width: 200px;
   cursor: pointer;
