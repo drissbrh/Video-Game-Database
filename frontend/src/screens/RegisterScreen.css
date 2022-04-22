@@ -1,0 +1,53 @@
+.registerscreen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  transform: translate(-50%, -50%);
+}
+.registerscreen > h1 {
+  font-size: 55px;
+}
+
+.form__elements1 {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.username__section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.username__section > label {
+  font-size: 25px;
+}
+.username__section > input {
+  padding: 12px;
+  width: 350px;
+  outline: none;
+}
+
+.register__btn {
+  color: white;
+  font-size: 17px;
+
+  background-color: #f72585;
+  border: 2px solid #f72585;
+  padding: 15px 25px;
+  width: 200px;
+  cursor: pointer;
+
+  transition: 0.2s ease-in-out;
+}
+.login__link > a {
+  color: #f72585;
+  text-decoration: none;
+}
+.register__btn:hover {
+  background-color: transparent;
+}

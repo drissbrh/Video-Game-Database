@@ -1,9 +1,0 @@
-.accountscreen {
-  font-size: 100px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  color: white;
-  font-weight: 700;
-  transform: translate(-50%, -50%);
-}

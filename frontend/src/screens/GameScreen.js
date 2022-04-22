@@ -62,16 +62,39 @@ const GameScreen = ({ match, history }) => {
               </div>
               <div className="info__genres1">
                 <p>Genres: </p>
-                <span></span>
+
+                <span>
+                  {game.genres &&
+                    game.genres.map((g) => <span>{g.name.split(",")}</span>)}
+                </span>
               </div>
               <div className="info__platforms1">
                 <p>Platforms: </p>
                 <span>
-                  <i className="fa-brands fa-playstation"></i>
-                  <i className="fa-solid fa-desktop"></i>
-                  <i className="fa-brands fa-linux"></i>
-                  <i className="fa-brands fa-xbox"></i>
-                  <i className="fa-brands fa-playstation"></i>
+                  {game.parent_platforms &&
+                    game.parent_platforms.map((p) => (
+                      <>
+                        <i
+                          className={
+                            p.platform.name === "PlayStation"
+                              ? "fa-brands fa-playstation"
+                              : p.platform.name === "PC"
+                              ? "fa-solid fa-desktop"
+                              : p.platform.name === "Apple Macintosh"
+                              ? "fa-solid fa-apple-whole"
+                              : p.platform.name === "Linux"
+                              ? "fa-brands fa-linux"
+                              : p.platform.name === "Xbox"
+                              ? "fa-brands fa-xbox"
+                              : p.platform.name === "iOS"
+                              ? "fa-brands fa-app-store-ios"
+                              : p.platform.name === "Android"
+                              ? "fa-brands fa-android"
+                              : ""
+                          }
+                        ></i>
+                      </>
+                    ))}
                 </span>
               </div>
             </div>

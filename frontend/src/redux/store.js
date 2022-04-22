@@ -3,11 +3,13 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { gameDetailReducer, gameListReducer } from "./reducers/gameReducer";
 import { favouriteReducer } from "./reducers/favouriteReducer";
+import { userLoginReducer } from "./reducers/userReducer";
 
 const reducer = combineReducers({
   favourite: favouriteReducer,
   gameList: gameListReducer,
   gameDetails: gameDetailReducer,
+  userLogin: userLoginReducer,
 });
 
 const middleware = [thunk];
@@ -16,9 +18,16 @@ const favouriteItemsInLocalStorage = localStorage.getItem("myGames")
   ? JSON.parse(localStorage.getItem("myGames"))
   : [];
 
+const userInfoInLocalStorage = localStorage.getItem("UserInfo")
+  ? JSON.parse(localStorage.getItem("UserInfo"))
+  : null;
+
 const initialeState = {
   favourite: {
     favouriteItems: favouriteItemsInLocalStorage,
+  },
+  userLogin: {
+    userInfo: userInfoInLocalStorage,
   },
 };
 

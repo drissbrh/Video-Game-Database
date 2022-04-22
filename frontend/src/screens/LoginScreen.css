@@ -1,0 +1,54 @@
+.loginscreen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  transform: translate(-50%, -50%);
+}
+
+.loginscreen > h1 {
+  font-size: 55px;
+}
+
+.form__elements {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.email__section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.email__section > label {
+  font-size: 25px;
+}
+.email__section > input {
+  padding: 12px;
+  width: 350px;
+  outline: none;
+}
+
+.signin__btn {
+  color: white;
+  font-size: 17px;
+
+  background-color: #f72585;
+  border: 2px solid #f72585;
+  padding: 15px 25px;
+  width: 200px;
+  cursor: pointer;
+
+  transition: 0.2s ease-in-out;
+}
+.register__link > a {
+  color: #f72585;
+  text-decoration: none;
+}
+.signin__btn:hover {
+  background-color: transparent;
+}
