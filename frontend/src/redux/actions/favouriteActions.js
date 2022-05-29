@@ -1,12 +1,50 @@
 import axios from "axios";
 
 import {
-  ADD_TO_FAVOURITE,
-  REMOVE_FROM_FAVOURITE,
-  FAVOURITE_RESET,
+  ADD_TO_MY_FAVOURITE_SUCCESS,
+  ADD_TO_MY_FAVOURITE_FAIL,
+  REMOVE_FROM_MY_FAVOURITE,
+  FAVOURITE_LIST_MY_FAIL,
+  FAVOURITE_LIST_MY_REQUEST,
+  FAVOURITE_LIST_MY_SUCCESS,
 } from "../constants/favouriteConstants";
+import { logout } from "./userActions";
 
-export const addToFavourites = (id) => async (dispatch, getState) => {
+export const listMyFavourites = () => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: FAVOURITE_LIST_MY_REQUEST,
+    });
+
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
+    const config = {
+      header: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
+    const { data } = await axios.get(`/api/v1/favourites/`, config);
+    dispatch({
+      type: FAVOURITE_LIST_MY_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    if (message === "Not authorized, token failed") {
+      dispatch(logout());
+    }
+    dispatch({
+      type: FAVOURITE_LIST_MY_FAIL,
+      error:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+/*export const addToFavourites = (id) => async (dispatch, getState) => {
   const { data } = await axios.get(`/api/v1/games/${id}`);
 
   dispatch({
@@ -23,7 +61,7 @@ export const addToFavourites = (id) => async (dispatch, getState) => {
     "myGames",
     JSON.stringify(getState().favourite.favouriteItems)
   );
-};
+};*/
 
 export const removeFromFavourites = (id) => (dispatch, getState) => {
   dispatch({
