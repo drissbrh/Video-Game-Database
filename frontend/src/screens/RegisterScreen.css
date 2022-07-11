@@ -41,16 +41,23 @@
 .username__section > label {
   font-size: 25px;
 }
+
 .username__section > input {
+  border: 2px solid black;
+  font-size: 16px;
   padding: 12px;
   width: 350px;
   outline: none;
+  transition: 0.3s ease-in-out;
+}
+
+.username__section > input:focus {
+  border: 2px solid #f72585;
 }
 
 .register__btn {
   color: white;
-  font-size: 17px;
-
+  font-size: 20px;
   background-color: #f72585;
   border-radius: 5px;
   border: 1px solid #f72585;

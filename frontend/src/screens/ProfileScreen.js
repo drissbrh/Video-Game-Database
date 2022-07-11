@@ -20,8 +20,8 @@ const ProfileScreen = () => {
   };
 
   return (
-    <div>
-      <form className="profilescreen" onSubmit={handleSubmit}>
+    <div className="profilescreen">
+      <form className="profilescreen__inside" onSubmit={handleSubmit}>
         {" "}
         <h2>Personal Info</h2>
         {loading ? (

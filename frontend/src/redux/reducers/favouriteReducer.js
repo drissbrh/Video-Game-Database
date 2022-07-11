@@ -1,7 +1,6 @@
 import {
-  ADD_TO_FAVOURITE,
-  REMOVE_FROM_FAVOURITE,
-  FAVOURITE_RESET,
+  ADD_TO_MY_FAVOURITE_SUCCESS,
+  REMOVE_FROM_MY_FAVOURITE,
 } from "../constants/favouriteConstants";
 
 const FAVOURITE_INITIALE_STATE = {
@@ -10,7 +9,7 @@ const FAVOURITE_INITIALE_STATE = {
 
 export const favouriteReducer = (state = FAVOURITE_INITIALE_STATE, action) => {
   switch (action.type) {
-    case ADD_TO_FAVOURITE:
+    case ADD_TO_MY_FAVOURITE_SUCCESS:
       const item = action.payload;
 
       const existItem = state.favouriteItems.find((x) => x.game === item.game);
@@ -28,7 +27,7 @@ export const favouriteReducer = (state = FAVOURITE_INITIALE_STATE, action) => {
           favouriteItems: [...state.favouriteItems, item],
         };
       }
-    case REMOVE_FROM_FAVOURITE:
+    case REMOVE_FROM_MY_FAVOURITE:
       return {
         ...state,
         favouriteItems: state.favouriteItems.filter(

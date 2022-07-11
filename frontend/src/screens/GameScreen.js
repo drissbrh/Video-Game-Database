@@ -18,7 +18,7 @@ const GameScreen = ({ match, history }) => {
   }, [dispatch, match, game]);
 
   const addIt = () => {
-    dispatch(addToFavourites(game._id));
+    //dispatch(addToFavourites(game._id));
   };
 
   return (

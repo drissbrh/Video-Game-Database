@@ -6,17 +6,21 @@
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  gap: 35px;
+
   transform: translate(-50%, -50%);
 }
 
-.profilescreen > h2 {
+.profilescreen__inside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.profilescreen__inside > h2 {
   font-size: 65px;
 }
-.profilescreen > button {
+.profilescreen__inside > button {
   color: white;
   font-size: 17px;
   font-weight: 700;
@@ -27,17 +31,17 @@
   cursor: pointer;
   border-radius: 5px;
   padding-bottom: 1rem;
-  padding-bottom: 1rem;
+  margin-bottom: 2rem;
   transition: 0.2s ease-in-out;
 }
-.profilescreen > button:hover {
+.profilescreen__inside > button:hover {
   background-color: transparent;
 }
 
 .profile__details {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 15px;
 
   align-items: center;
 }
