@@ -1,0 +1,92 @@
+.profilescreen {
+  position: absolute;
+  height: 60vh;
+  top: 50%;
+  left: 50%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+  transform: translate(-50%, -50%);
+}
+
+.profilescreen__inside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.profilescreen__inside > h2 {
+  font-size: 65px;
+}
+.profilescreen__inside > button {
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  background-color: #f72585;
+  border: 2px solid #f72585;
+  padding: 15px 25px;
+  width: 200px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  transition: 0.2s ease-in-out;
+}
+.profilescreen__inside > button:hover {
+  background-color: transparent;
+}
+
+.profile__details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  align-items: center;
+}
+
+.profile__details > img {
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+}
+.profile__details > img:hover {
+  opacity: 0.6;
+}
+
+.profile__details > p {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.name__section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.name__section > label {
+  font-size: 25px;
+}
+
+.name__section > input {
+  font-size: 18px;
+  padding: 15px 45px;
+  width: 400px;
+  outline: none;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid white;
+  background-color: transparent;
+  transition: 0.2s ease-in-out;
+}
+
+.name__section > input:focus {
+  outline: none;
+  color: white;
+  border-color: #f72585;
+  background-color: transparent;
+}

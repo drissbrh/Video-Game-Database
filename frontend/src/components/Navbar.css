@@ -47,6 +47,20 @@
   transition: 0.19s ease-in-out;
 }
 
+.navbar__links > li > p {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+  transition: 0.19s ease-in-out;
+}
+
+.navbar__links > li > p:hover {
+  color: #f72585;
+}
+
 .threeLines {
   display: none;
   width: 40px;

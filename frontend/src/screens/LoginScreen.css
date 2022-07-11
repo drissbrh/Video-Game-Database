@@ -1,0 +1,83 @@
+.loginscreen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  transform: translate(-50%, -50%);
+}
+
+.spinner1 {
+  width: 100px;
+  height: 100px;
+  border-left: 4px solid #f72585;
+  border-radius: 100px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.signIn__error {
+  border: 2px solid #f72585;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 15px;
+}
+
+.loginscreen > h1 {
+  font-size: 55px;
+}
+
+.form__elements {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.email__section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.email__section > label {
+  font-size: 25px;
+}
+.email__section > input {
+  border: 2px solid black;
+  padding: 12px;
+  font-size: 16px;
+  width: 350px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.email__section > input:focus {
+  border: 2px solid #f72585;
+}
+
+.signin__btn {
+  color: white;
+  font-size: 20px;
+  background-color: #f72585;
+  border-radius: 5px;
+  border: 1px solid #f72585;
+  padding: 15px 25px;
+  width: 200px;
+  cursor: pointer;
+
+  transition: 0.2s ease-in-out;
+}
+.register__link > a {
+  color: #f72585;
+  text-decoration: none;
+}
+.signin__btn:hover {
+  background-color: transparent;
+}

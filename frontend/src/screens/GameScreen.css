@@ -148,8 +148,7 @@
 .info__genres1 > span {
   font-weight: 600;
   display: grid;
-  font-size: 1.3rem;
-  gap: 0px;
+  font-size: 1rem;
   grid-template-columns: repeat(3, 1fr);
 }
 
