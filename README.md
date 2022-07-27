@@ -7,7 +7,7 @@ It's a intermediate project made with React, Redux, MongoDB, Express & NodeJS, f
 1.0.0 (backend: NodeJS,Express & MongoDB)
 
 ### Live Version
-(Live demo is here)'[https://game-db1.herokuapp.com]
+[Live demo is here](https://game-db1.herokuapp.com)
 
 ### Usage
 
