@@ -2,20 +2,22 @@ import React, { useEffect } from "react";
 import { ListGameDetails } from "../redux/actions/gameActions";
 import "./GameScreen.css";
 import { useDispatch, useSelector } from "react-redux";
-
+import { useNavigate, useParams } from "react-router-dom";
 import { addToFavourites } from "../redux/actions/favouriteActions";
 
-const GameScreen = ({ match, history }) => {
+const GameScreen = () => {
   const gameDrawer = ["gamescreen"];
   const dispatch = useDispatch();
+  const { id } = useParams();
+  const navigate = useNavigate();
   const gameDetails = useSelector((state) => state.gameDetails);
   const { loading, error, game } = gameDetails;
 
   useEffect(() => {
-    if (game && match.params.id !== game._id) {
-      dispatch(ListGameDetails(match.params.id));
+    if (game && id !== game._id) {
+      dispatch(ListGameDetails(id));
     }
-  }, [dispatch, match, game]);
+  }, [dispatch, id, game]);
 
   const addIt = () => {
     //dispatch(addToFavourites(game._id));
@@ -101,10 +103,7 @@ const GameScreen = ({ match, history }) => {
           </div>
           <div>
             <button className="game__exit" title="Exit to home page">
-              <i
-                className="fa-solid fa-arrow-right-from-bracket game__exit1"
-                onClick={() => history.push("/page/1")}
-              ></i>
+              <i className="fa-solid fa-arrow-right-from-bracket game__exit1"></i>
             </button>
           </div>
         </div>

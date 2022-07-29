@@ -3,10 +3,8 @@ import { Link } from "react-router-dom";
 import "./game.css";
 
 import { addToFavourites } from "../redux/actions/favouriteActions";
-import { useDispatch } from "react-redux";
 
 const Game = (props) => {
-  const dispatch = useDispatch();
   const {
     gameId,
     name,

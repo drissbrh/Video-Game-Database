@@ -31,16 +31,15 @@ export const listMyFavourites = () => async (dispatch, getState) => {
       payload: data,
     });
   } catch (error) {
-    const message =
-      error.response && error.response.data.message
-        ? error.response.data.message
-        : error.message;
     if (message === "Not authorized, token failed") {
       dispatch(logout());
     }
     dispatch({
       type: FAVOURITE_LIST_MY_FAIL,
-      payload: message,
+      error:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
     });
   }
 };
@@ -66,7 +65,7 @@ export const listMyFavourites = () => async (dispatch, getState) => {
 
 export const removeFromFavourites = (id) => (dispatch, getState) => {
   dispatch({
-    type: REMOVE_FROM_MY_FAVOURITE,
+    type: REMOVE_FROM_FAVOURITE,
     payload: id,
   });
 
