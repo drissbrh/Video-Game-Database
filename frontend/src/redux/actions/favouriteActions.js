@@ -45,11 +45,11 @@ export const listMyFavourites = () => async (dispatch, getState) => {
   }
 };
 
-/*export const addToFavourites = (id) => async (dispatch, getState) => {
+export const addToFavourites = (id) => async (dispatch, getState) => {
   const { data } = await axios.get(`/api/v1/games/${id}`);
 
   dispatch({
-    type: ADD_TO_FAVOURITE,
+    type: ADD_TO_MY_FAVOURITE_SUCCESS,
     payload: {
       game: data._id,
       name: data.name,
@@ -62,7 +62,7 @@ export const listMyFavourites = () => async (dispatch, getState) => {
     "myGames",
     JSON.stringify(getState().favourite.favouriteItems)
   );
-};*/
+};
 
 export const removeFromFavourites = (id) => (dispatch, getState) => {
   dispatch({

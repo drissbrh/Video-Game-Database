@@ -1,14 +1,15 @@
 import React from "react";
 import "./SideDrawer.css";
 import { Link } from "react-router-dom";
-import { logout } from "../redux/actions/userActions";
+
 import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../redux toolkit/auth/authSlice";
 
 const SideDrawer = ({ show, click }) => {
   const dispatch = useDispatch();
 
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
+  const auth = useSelector((state) => state.auth);
+  const { user } = auth;
 
   const logoutHandler = () => {
     dispatch(logout());
@@ -28,13 +29,13 @@ const SideDrawer = ({ show, click }) => {
         <li>
           <Link to="/favourites">Favourites</Link>
         </li>
-        {userInfo ? (
+        {user ? (
           <>
             <li>
-              <Link to="/profile">{userInfo.name.split(" ")[0]}</Link>
+              <Link to="/profile">{user.name}</Link>
             </li>
-            <li onClick={logoutHandler}>
-              <Link>LOGOUT</Link>
+            <li onClick={logoutHandler} className="log__out">
+              LOGOUT
             </li>
           </>
         ) : (

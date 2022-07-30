@@ -8,7 +8,7 @@ import { addToFavourites } from "../redux/actions/favouriteActions";
 const GameScreen = () => {
   const gameDrawer = ["gamescreen"];
   const dispatch = useDispatch();
-  const { id } = useParams();
+  const id = useParams().id;
   const navigate = useNavigate();
   const gameDetails = useSelector((state) => state.gameDetails);
   const { loading, error, game } = gameDetails;
@@ -20,7 +20,7 @@ const GameScreen = () => {
   }, [dispatch, id, game]);
 
   const addIt = () => {
-    //dispatch(addToFavourites(game._id));
+    dispatch(addToFavourites(game._id));
   };
 
   return (

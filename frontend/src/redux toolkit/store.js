@@ -1,27 +1,29 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { gameDetailReducer, gameListReducer } from "./reducers/gameReducer";
-import { favouriteReducer } from "./reducers/favouriteReducer";
-import { userLoginReducer, userRegisterReducer } from "./reducers/userReducer";
+import authReducer from "./auth/authSlice";
+import gameReducer from "./games/gameSlice";
 
-const favouriteItemsInLocalStorage = localStorage.getItem("myGames")
-  ? JSON.parse(localStorage.getItem("myGames"))
-  : [];
+// const favouriteItemsInLocalStorage = localStorage.getItem("myGames")
+//   ? JSON.parse(localStorage.getItem("myGames"))
+//   : [];
 
-const userInfoInLocalStorage = localStorage.getItem("UserInfo")
-  ? JSON.parse(localStorage.getItem("UserInfo"))
-  : null;
+// const userInfoInLocalStorage = localStorage.getItem("UserInfo")
+//   ? JSON.parse(localStorage.getItem("UserInfo"))
+//   : null;
 
-const initialeState = {
-  favourite: {
-    favouriteItems: favouriteItemsInLocalStorage,
+// const initialeState = {
+//   favourite: {
+//     favouriteItems: favouriteItemsInLocalStorage,
+//   },
+//   userLogin: {
+//     userInfo: userInfoInLocalStorage,
+//   },
+// };
+
+const store = configureStore({
+  reducer: {
+    auth: authReducer,
+    gamesRed: gameReducer,
   },
-  userLogin: {
-    userInfo: userInfoInLocalStorage,
-  },
-};
-
-const rootReducer = {};
-
-const store = configureStore({ reducer: rootReducer });
+});
 
 export default store;

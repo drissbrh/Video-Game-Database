@@ -22,10 +22,10 @@ const FavouritesScreen = () => {
           <Link to="/">Go Back</Link>
         </div>
       ) : (
-        favouriteItems.map((f) => (
+        favouriteItems.map((favourite) => (
           <FavouriteItem
-            key={f._id}
-            mygame={f}
+            key={favourite._id}
+            mygame={favourite}
             removeHandler={removeFromFavouritesHandler}
           />
         ))

@@ -25,6 +25,12 @@ function App() {
         <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
         <Routes>
           <Route path="/" exact element={<HomeScreen />} />
+          <Route exact path="/page/:pageNumber" element={<HomeScreen />} />
+          <Route path="/login" exact element={<LoginScreen />} />
+          <Route path="/register" exact element={<RegisterScreen />} />
+          <Route path="/profile" exact element={<ProfileScreen />} />
+          <Route path="/favourites" exact element={<FavouritesScreen />} />
+          <Route path="/game/:id" exact element={<GameScreen />} />
         </Routes>
       </div>
     </Router>

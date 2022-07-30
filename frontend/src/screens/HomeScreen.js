@@ -4,30 +4,30 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import "./HomeScreen.css";
 
-// import Game from "../components/Game";
+import Game from "../components/Game";
 import Paginate from "../components/Paginate";
+import { getGames } from "../redux toolkit/games/gameSlice";
 
 const HomeScreen = () => {
-  // const pageNumber1 = useParams();
-  // const pageNumber = pageNumber1 || 1;
+  const pageNumber = useParams().pageNumber || 1;
 
   const dispatch = useDispatch();
-  // const gameList = useSelector((state) => state.gameList);
-  // const { loading, error, games, page, pages } = gameList;
+  const gamesRed = useSelector((state) => state.gamesRed);
+  const { isLoading, isError, message, games, page, pages } = gamesRed;
 
-  // useEffect(() => {
-  //   dispatch(ListGames());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getGames(pageNumber));
+  }, [dispatch, pageNumber]);
   return (
     <div className="homescreen">
       <h1 className="homescreen__title">All Games</h1>
-      {/* <div className="homescreen__games">
-        {loading ? (
+      <div className="homescreen__games">
+        {isLoading ? (
           <div className="loading">
             <div className="spinner"></div>
           </div>
-        ) : error ? (
-          <h3>{error}</h3>
+        ) : message ? (
+          <h3>{message}</h3>
         ) : (
           <>
             {games &&
@@ -49,7 +49,7 @@ const HomeScreen = () => {
             <Paginate pages={pages} page={page} />
           </>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };

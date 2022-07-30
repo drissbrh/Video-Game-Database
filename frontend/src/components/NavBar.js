@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { logout } from "../redux/actions/userActions";
+
 import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../redux toolkit/auth/authSlice";
 
 const NavBar = ({ click }) => {
   const dispatch = useDispatch();
 
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
+  const auth = useSelector((state) => state.auth);
+  const { user } = auth;
 
   const logoutHandler = () => {
     dispatch(logout());
@@ -24,17 +25,17 @@ const NavBar = ({ click }) => {
         <li>
           <Link to="/">Home</Link>
         </li>
-        {userInfo ? (
+        {user ? (
           <li>
             <Link to="/favourites">FAVOURITES</Link>
           </li>
         ) : (
           <></>
         )}
-        {userInfo ? (
+        {user ? (
           <>
             <li>
-              <Link to="/profile">{userInfo.name.split(" ")[0]}</Link>
+              <Link to="/profile">{user.name.split(" ")[0]}</Link>
             </li>
             <li onClick={logoutHandler}>
               <p>LOGOUT</p>
