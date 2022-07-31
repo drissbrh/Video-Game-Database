@@ -30,6 +30,7 @@
 }
 
 .sidedrawer__links > li > a {
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,6 +44,25 @@
   transition: 0.2s ease-in-out;
 }
 .sidedrawer__links > li > a:hover {
+  background-color: #f72585;
+  color: #f4f4f4;
+}
+
+.log__out {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  color: #f72585;
+  font-size: 2rem;
+  cursor: pointer;
+  flex: 1;
+  transition: 0.2s ease-in-out;
+}
+.log__out:hover {
   background-color: #f72585;
   color: #f4f4f4;
 }

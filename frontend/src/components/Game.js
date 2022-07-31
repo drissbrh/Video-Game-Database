@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./game.css";
 
-import { addToFavourites } from "../redux/actions/favouriteActions";
-
 const Game = (props) => {
   const {
     gameId,
@@ -19,7 +17,7 @@ const Game = (props) => {
   } = props;
 
   return (
-    <div className="game">
+    <div className="game" key={gameId}>
       <Link to={`/game/${gameId}`} title="See game details">
         <img src={image} alt={name} />
       </Link>

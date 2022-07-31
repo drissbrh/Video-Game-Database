@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ProfileScreen.css";
 import kratos from "../screens/Kratos.webp";
-import { ListGames } from "../redux/actions/gameActions";
+
 import { useDispatch, useSelector } from "react-redux";
 
 const ProfileScreen = () => {
@@ -11,10 +11,11 @@ const ProfileScreen = () => {
   const [birth, setBirth] = useState("");
   const dispatch = useDispatch();
 
-  const userLogin = useSelector((state) => state.userLogin);
-  const gameList = useSelector((state) => state.gameList);
-  const { loading, error, games } = gameList;
-  const { userInfo } = userLogin;
+  // const gameList = useSelector((state) => state.gameList);
+  // const { loading, error, games } = gameList;
+
+  const auth = useSelector((state) => state.auth);
+  const { isLoading, isError, isSuccess, user, message } = auth;
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -24,19 +25,19 @@ const ProfileScreen = () => {
       <form className="profilescreen__inside" onSubmit={handleSubmit}>
         {" "}
         <h2>Personal Info</h2>
-        {loading ? (
+        {isLoading ? (
           <div className="loading">
             <div className="spinner"></div>
           </div>
-        ) : error ? (
-          <h3>{error}</h3>
+        ) : isError ? (
+          <h3>{isError}</h3>
         ) : (
           <>
             {
               <>
                 <div className="profile__details">
                   <img src={kratos} />
-                  <p>{userInfo.name.split(" ")[0].toUpperCase()}</p>
+                  <p>{user.name.split(" ")[0].toUpperCase()}</p>
                 </div>
                 <>
                   <div className="name__section">

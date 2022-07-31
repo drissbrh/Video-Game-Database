@@ -3,17 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import FavouriteItem from "../components/FavouriteItem";
 import { Link } from "react-router-dom";
 import "./FavouritesScreen.css";
-
-import { removeFromFavourites } from "../redux/actions/favouriteActions";
+import { removeFromFavourites } from "../redux/favourites/faveSlice";
 
 const FavouritesScreen = () => {
   const dispatch = useDispatch();
-  const { favouriteItems } = useSelector((state) => state.favourite);
+  const favs = useSelector((state) => state.favs);
+  const { favouriteItems } = favs;
 
-  const removeFromFavouritesHandler = (id) => {
-    dispatch(removeFromFavourites(id));
+  const removeFromFavouritesHandler = (_id) => {
+    dispatch(removeFromFavourites(_id));
   };
-  useEffect(() => {}, [dispatch]);
   return (
     <div className="favouritesScreen">
       {favouriteItems.length === 0 ? (
@@ -22,10 +21,10 @@ const FavouritesScreen = () => {
           <Link to="/">Go Back</Link>
         </div>
       ) : (
-        favouriteItems.map((f) => (
+        favouriteItems.map((favourite) => (
           <FavouriteItem
-            key={f._id}
-            mygame={f}
+            key={favourite._id}
+            mygame={favourite}
             removeHandler={removeFromFavouritesHandler}
           />
         ))
