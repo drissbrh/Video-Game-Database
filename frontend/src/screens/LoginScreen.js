@@ -4,7 +4,7 @@ import "./LoginScreen.css";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { login, reset } from "../redux toolkit/auth/authSlice";
+import { login, reset } from "../redux/auth/authSlice";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -18,9 +18,6 @@ const LoginScreen = () => {
   const redirect = location.search ? location.search.split("=")[1] : "/";
 
   useEffect(() => {
-    if (isError) {
-      return "";
-    }
     // Redirect when logged in
     if (isSuccess || user) {
       navigate("/");

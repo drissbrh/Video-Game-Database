@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../redux toolkit/auth/authSlice";
+import { logout } from "../redux/auth/authSlice";
 
 const NavBar = ({ click }) => {
   const dispatch = useDispatch();

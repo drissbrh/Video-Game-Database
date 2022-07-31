@@ -1,19 +1,20 @@
 import React, { useEffect } from "react";
-import { ListGames } from "../redux/actions/gameActions";
+
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import "./HomeScreen.css";
 
 import Game from "../components/Game";
 import Paginate from "../components/Paginate";
-import { getGames } from "../redux toolkit/games/gameSlice";
+import { getGames } from "../redux/games/gameSlice";
 
 const HomeScreen = () => {
   const pageNumber = useParams().pageNumber || 1;
 
   const dispatch = useDispatch();
   const gamesRed = useSelector((state) => state.gamesRed);
-  const { isLoading, isError, message, games, page, pages } = gamesRed;
+  const { isLoading, isError, message, gamesResponse } = gamesRed;
+  const { games, page, pages } = gamesResponse;
 
   useEffect(() => {
     dispatch(getGames(pageNumber));

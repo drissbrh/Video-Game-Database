@@ -1,28 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { registerUser } from "../redux/auth/authSlice";
 import "./RegisterScreen.css";
-
-import { registerUser } from "../redux/actions/userActions";
 
 const RegisterScreen = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const userRegister = useSelector((state) => state.userRegister);
-  const { loading, error, userInfo } = userRegister;
+  const [passMessage, setPassMessage] = useState(null);
+
+  const auth = useSelector((state) => state.auth);
+  const { isLoading, isError, isSuccess, user, message } = auth;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(registerUser(name, email, password));
+    if (password === confirmPassword) {
+      const userData = { name, email, password };
+      dispatch(registerUser(userData));
+    } else {
+      setPassMessage("Passwords do not match");
+    }
   };
+  useEffect(() => {
+    if (isSuccess || user) {
+      navigate("/");
+    }
+  }, [isSuccess, user, navigate]);
   return (
     <div className="registerscreen">
       <h1 className="register__header">Register</h1>
-      {error && <p className="signIn__error">{error}</p>}
-      {loading && <h5 className="spinner2"></h5>}
+      {passMessage && <p className="signIn__error">{passMessage}</p>}
+      {message && <p className="signIn__error">{message}</p>}
+      {isLoading && <h5 className="spinner2"></h5>}
       <form onSubmit={handleSubmit} className="form__elements1">
         <div className="username__section">
           <label>Name</label>

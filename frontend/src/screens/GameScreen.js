@@ -1,36 +1,38 @@
 import React, { useEffect } from "react";
-import { ListGameDetails } from "../redux/actions/gameActions";
+
 import "./GameScreen.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { addToFavourites } from "../redux/actions/favouriteActions";
+// import { addToFavourites } from "../redux/actions/favouriteActions";
+import { getOneGame } from "../redux/games/gameSlice";
+import { addToFavs } from "../redux/favourites/faveSlice";
 
 const GameScreen = () => {
   const gameDrawer = ["gamescreen"];
   const dispatch = useDispatch();
   const id = useParams().id;
   const navigate = useNavigate();
-  const gameDetails = useSelector((state) => state.gameDetails);
-  const { loading, error, game } = gameDetails;
+  const gamesRed = useSelector((state) => state.gamesRed);
+  const { isLoading, isError, isSuccess, message, game } = gamesRed;
 
   useEffect(() => {
     if (game && id !== game._id) {
-      dispatch(ListGameDetails(id));
+      dispatch(getOneGame(id));
     }
   }, [dispatch, id, game]);
 
   const addIt = () => {
-    dispatch(addToFavourites(game._id));
+    dispatch(addToFavs(game));
   };
 
   return (
     <div className={"gamescreen"}>
-      {loading ? (
+      {isLoading ? (
         <div className="loading">
           <div className="spinner"></div>
         </div>
-      ) : error ? (
-        <h2>{error}</h2>
+      ) : message ? (
+        <h2>{message}</h2>
       ) : (
         <div className="game__details">
           <div className="game__image">

@@ -9,8 +9,8 @@ const getAllGames = async (pageNumber = "") => {
 };
 
 //Get a game by Id
-const getGameById = async (pageNumber = "") => {
-  const response = await axios.get(API_URL + `?pageNumber=${pageNumber}`);
+const getGameById = async (id) => {
+  const response = await axios.get(API_URL + `/${id}`);
   return response.data;
 };
 

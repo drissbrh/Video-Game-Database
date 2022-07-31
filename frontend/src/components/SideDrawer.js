@@ -3,7 +3,7 @@ import "./SideDrawer.css";
 import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../redux toolkit/auth/authSlice";
+import { logout } from "../redux/auth/authSlice";
 
 const SideDrawer = ({ show, click }) => {
   const dispatch = useDispatch();
