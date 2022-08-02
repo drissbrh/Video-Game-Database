@@ -8,7 +8,8 @@ import {
 } from "../controllers/favouriteController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
+favouriteRouter.route("/myfavourites").post(protect, addFavouriteItem);
 favouriteRouter.route("/myfavourites").get(protect, getMyFavourites);
-favouriteRouter.route("/:id").get(protect, deleteFavouriteItem);
+favouriteRouter.route("/:id").delete(protect, deleteFavouriteItem);
 
 export default favouriteRouter;
