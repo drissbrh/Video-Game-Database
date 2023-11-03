@@ -37,7 +37,9 @@ const ProfileScreen = () => {
               <>
                 <div className="profile__details">
                   <img src={kratos} />
-                  <p>{user.name.split(" ")[0].toUpperCase()}</p>
+                  <p>
+                    {user && user.name && user.name.split(" ")[0].toUpperCase()}
+                  </p>
                 </div>
                 <>
                   <div className="name__section">
