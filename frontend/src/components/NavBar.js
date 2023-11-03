@@ -35,7 +35,9 @@ const NavBar = ({ click }) => {
         {user ? (
           <>
             <li>
-              <Link to="/profile">{user.name.split(" ")[0]}</Link>
+              <Link to="/profile">
+                {user && user.name && user.name.split(" ")[0].toUpperCase()}
+              </Link>
             </li>
             <li onClick={logoutHandler}>
               <p>LOGOUT</p>
