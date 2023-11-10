@@ -15,6 +15,10 @@ const GameScreen = () => {
   const gamesRed = useSelector((state) => state.gamesRed);
   const { isLoading, isError, isSuccess, message, game } = gamesRed;
 
+  const goBack = () => {
+    navigate(-1);
+  };
+
   useEffect(() => {
     if (game && id !== game._id) {
       dispatch(getOneGame(id));
@@ -45,6 +49,11 @@ const GameScreen = () => {
                 className="fa-solid fa-heart game__likes"
                 onClick={addIt}
                 title="Add this game to favourite"
+              ></i>
+              <i
+                className="fa-solid fa-door-open game__exit"
+                title="Exit to home page"
+                onClick={goBack}
               ></i>
             </div>
             <div>
@@ -102,11 +111,6 @@ const GameScreen = () => {
                 </span>
               </div>
             </div>
-          </div>
-          <div>
-            <button className="game__exit" title="Exit to home page">
-              <i className="fa-solid fa-arrow-right-from-bracket game__exit1"></i>
-            </button>
           </div>
         </div>
       )}

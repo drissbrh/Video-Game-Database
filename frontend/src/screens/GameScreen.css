@@ -179,14 +179,12 @@
 }
 
 .game__exit {
-  margin-top: 2rem;
   cursor: pointer;
   font-size: 25px;
   color: white;
   padding: 0px;
   background-color: transparent;
   border: 0;
-  margin-left: 3rem;
   transition: 0.3s ease-in-out;
 }
 
@@ -204,7 +202,7 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 950px) {
   .gamescreen {
   }
   .game__name > p {
@@ -285,11 +283,8 @@
     padding-bottom: 15px;
     font-size: 25px;
   }
-  /* .game__details > div > img {
-    width: 500px;
-    height: 250px;
-    border-radius: 15px 15px 0px 0px;
-  } */
+  .game__details > div > img {
+  }
   .info__released > p {
     font-weight: 500;
     font-size: 1.1rem;
