@@ -26,7 +26,7 @@ const GameScreen = () => {
   };
 
   return (
-    <div className={"gamescreen"}>
+    <div className="gamescreen">
       {isLoading ? (
         <div className="loading">
           <div className="spinner"></div>

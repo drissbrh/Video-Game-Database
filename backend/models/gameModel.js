@@ -116,6 +116,10 @@ const gameSchema = mongoose.Schema({
       },
     },
   ],
+  liked: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const game = mongoose.model("game", gameSchema);

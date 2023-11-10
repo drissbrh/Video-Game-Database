@@ -26,13 +26,14 @@ const SideDrawer = ({ show, click }) => {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
-          <Link to="/favourites">Favourites</Link>
-        </li>
+
         {user ? (
           <>
             <li>
               <Link to="/profile">{user.name}</Link>
+            </li>
+            <li>
+              <Link to="/favourites">Favourites</Link>
             </li>
             <li onClick={logoutHandler} className="log__out">
               LOGOUT

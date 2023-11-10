@@ -177,22 +177,49 @@
 
 @media (max-width: 800px) {
   .game {
-    width: 500px;
+    width: 390px;
   }
-  .info__release > p {
-    padding: 0rem 5rem;
+  .info__release {
+    gap: 10px;
+    align-items: flex-start;
   }
   .info__rating > p {
     padding: 0rem 5rem;
   }
+  .info__release > p {
+    padding: 0rem 5rem;
+  }
+  .info__rating {
+    gap: 28px;
+    align-items: flex-start;
+  }
+  .info__rating > p {
+    padding: 0rem 5rem;
+  }
+  .info__meta {
+    gap: 1px;
+    align-items: flex-start;
+  }
   .info__meta > p {
     padding: 0rem 5rem;
+  }
+  .info__play {
+    gap: 10px;
+    align-items: flex-start;
   }
   .info__play > p {
     padding: 0rem 5rem;
   }
+  .info__genres {
+    gap: 20px;
+    align-items: flex-start;
+  }
   .info__genres > p {
     padding: 0rem 5rem;
+  }
+  .info__platforms {
+    gap: 0px;
+    align-items: flex-start;
   }
   .info__platforms > p {
     padding: 0rem 5rem;

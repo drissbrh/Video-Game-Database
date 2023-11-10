@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./HomeScreen.css";
 
 import Game from "../components/Game";
@@ -34,7 +34,6 @@ const HomeScreen = () => {
             {games &&
               games.map((g) => (
                 <Game
-                  key={g._id}
                   gameId={g._id}
                   name={g.name}
                   release={g.released}
