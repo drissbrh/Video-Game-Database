@@ -7,7 +7,7 @@ const Game = (props) => {
     gameId,
     name,
     release,
-    image,
+    short_screenshots,
     rating,
     metacritic,
     playtime,
@@ -16,10 +16,11 @@ const Game = (props) => {
     genres,
   } = props;
 
+  const wallpaper = short_screenshots[0].image;
   return (
     <div className="game" key={gameId}>
       <Link to={`/game/${gameId}`} title="See game details">
-        <img src={image} alt={name} />
+        <img src={wallpaper} alt={name} />
       </Link>
 
       <div className="game__info">

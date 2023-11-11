@@ -6,7 +6,7 @@ const Paginate = ({ pages, page }) => {
   return (
     pages > 1 && (
       <div className="paginate">
-        {[...Array(pages).keys()].map((x) => (
+        {[...Array(pages).keys()].slice(0, 15).map((x) => (
           <Link to={`/page/${x + 1}`} key={x + 1}>
             {x + 1}
           </Link>

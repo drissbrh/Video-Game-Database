@@ -9,7 +9,7 @@ const FavouriteItem = (props) => {
     <div className="favouriteItem">
       <img src={mygame.background_image} />
       <div className="item__body">
-        <Link to={`/game/${mygame._id}`} title="See game details">
+        <Link to={`/game/${mygame.id}`} title="See game details">
           <p className="favourite__name">{mygame.name}</p>
         </Link>
         <p className="added">
@@ -18,7 +18,7 @@ const FavouriteItem = (props) => {
       </div>
       <div className="delete__btn">
         <button
-          onClick={() => removeHandler(mygame._id)}
+          onClick={() => removeHandler(mygame.id)}
           title="Remove from Favourites"
         >
           <i className="fa-solid fa-trash"></i>

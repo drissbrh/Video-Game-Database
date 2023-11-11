@@ -34,10 +34,10 @@ const HomeScreen = () => {
             {games &&
               games.map((g) => (
                 <Game
-                  gameId={g._id}
+                  gameId={g.id}
                   name={g.name}
                   release={g.released}
-                  image={g.background_image}
+                  short_screenshots={g.short_screenshots}
                   ratings={g.ratings}
                   rating={g.rating}
                   parent={g.parent_platforms}
@@ -46,9 +46,11 @@ const HomeScreen = () => {
                   playtime={g.playtime}
                 />
               ))}
-            <Paginate pages={pages} page={page} />
           </>
         )}
+      </div>
+      <div>
+        <Paginate pages={pages} page={page} />
       </div>
     </div>
   );

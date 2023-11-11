@@ -8,7 +8,7 @@ const addToFavourites = async (id, state) => {
   const { data } = await axios.get(`/api/v1/games/${id}`);
 
   const item = {
-    game: data._id,
+    game: data.id,
     name: data.name,
     image: data.background_image,
   };

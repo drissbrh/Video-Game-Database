@@ -28,10 +28,21 @@
   width: 100%;
 }
 .game__image > img {
+  cursor: pointer;
   width: 100%;
   height: 550px;
   border-radius: 0px 0px 15px 15px;
   object-fit: cover;
+}
+
+.game__text__details {
+  margin-top: 2rem;
+  width: 800px;
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .game__name {
@@ -44,7 +55,7 @@
   color: white;
 }
 .game__name > p {
-  padding: 2rem 0rem;
+  padding: 1rem 0rem;
   margin-bottom: 12px;
 }
 .game__likes {

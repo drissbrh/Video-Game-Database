@@ -3,7 +3,10 @@ import gameService from "./gameService";
 
 const initialState = {
   gamesResponse: {},
-  game: {},
+  gameDetails: {
+    game: {},
+    screens: {},
+  },
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -75,7 +78,7 @@ export const gameSlice = createSlice({
       .addCase(getOneGame.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.game = action.payload;
+        state.gameDetails = action.payload;
       })
       .addCase(getOneGame.rejected, (state, action) => {
         state.isLoading = false;

@@ -44,13 +44,13 @@ export const favouriteSlice = createSlice({
     addToFavs: (state, action) => {
       const item = action.payload;
 
-      const existItem = state.favouriteItems.find((x) => x._id === item._id);
+      const existItem = state.favouriteItems.find((x) => x.id === item.id);
 
       if (existItem) {
         return {
           ...state,
           favouriteItems: state.favouriteItems.map((x) =>
-            x._id === existItem._id ? existItem : x
+            x.id === existItem.id ? existItem : x
           ),
         };
       } else {
@@ -63,7 +63,7 @@ export const favouriteSlice = createSlice({
     removeFromFavourites: (state, action) => {
       const gameId = action.payload;
       state.favouriteItems = state.favouriteItems.filter(
-        (x) => x._id !== gameId
+        (x) => x.id !== gameId
       );
 
       localStorage.setItem("myFavGames", JSON.stringify(state.favouriteItems));
